@@ -6,8 +6,6 @@ from datetime import datetime, timedelta
 import ast
 from replay_stats import replay_stats
 
-#TODO convert time to minutes + seconds
-
 class replay_analyzer:
     def __init__(self,replay_folder,player_id):
         self.replay_folder = replay_folder

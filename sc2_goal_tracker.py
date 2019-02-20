@@ -1,18 +1,3 @@
-#TODO if I want:
-# add customization panel instead of reading settings file
-# allow for different colors of things
-# get settings right
-# Allow for different window sizes
-
-
-# KNOWN ISSUES:
-# Korean replays break the program
-# Moving replays within a folder in the designated replay folder counts as playing a game
-
-#===============================================================================
-# from collections import Counter
-# import kivy
-#===============================================================================
 from kivy.app import App
 
 from kivy.uix.label import Label
