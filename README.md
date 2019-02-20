@@ -20,7 +20,7 @@ Customization can be adjusted in the settings.SC2GT for now which can be opened 
 There's a lot of bugs at the moment, and customization is a little limited for the time being. Please check the Issues tab to see what I'm aware of and what I would like to work on. Please add anything that I'm missing!  
 
 ### Multiple monitor support?  
-- Currently players will have to change the auto_anchor_left_right_offset /or auto_anchor_bottom_top_offset fields enough to make it place in another monitor
+Currently players will have to change the auto_anchor_left_right_offset /or auto_anchor_bottom_top_offset fields enough to make it place in another monitor
 
 # How to get player id
 [optional]Go to rankedftw.com   
