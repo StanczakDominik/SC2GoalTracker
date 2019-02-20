@@ -17,7 +17,7 @@ Customization can be adjusted in the settings.SC2GT for now which can be opened 
 
 # Q&A
 ### This program's buggy as heck / I want to do X  
-There's a lot of bugs at the moment, and customization is a little limited for the time being. Please check the Issues tab to see what I'm aware of and what I would like to work on. Please add anything that I'm missing!  
+There's a lot of bugs at the moment, and customization is a little limited for the time being. Please check the [Issues tab](https://github.com/SC2GoalTracker/SC2GoalTracker/issues) to see what I'm aware of and what I would like to work on. Please add anything that I'm missing!  
 
 ### Multiple monitor support?  
 Currently players will have to change the auto_anchor_left_right_offset /or auto_anchor_bottom_top_offset fields enough to make it place in another monitor
