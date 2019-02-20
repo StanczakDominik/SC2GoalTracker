@@ -5,7 +5,7 @@ A light-weight, hands-free tool that gets data from SC2 replays.
 Customization can be adjusted in the settings.SC2GT for now which can be opened using notepad
 * main_race_only - [[True/False]] Only tracks replays of race specified in the "main_race" field
 * main_race - [[Protoss/Terran/Zerg]] - No support for random atm, only way is to turn "main_race_only" to False
-* player_id - ID of the player SC2 profile, NEEDS to be able to work, see [How to get player_id](https://github.com/SC2GoalTracker/SC2GoalTracker/blob/master/README.md#How-to-get-player-id) below
+* player_id - ID of the player SC2 profile, which this program needs to work, see [How to get player_id](https://github.com/SC2GoalTracker/SC2GoalTracker/blob/master/README.md#How-to-get-player-id) below
 * twitch_messages_on - [[True/False]] Random messages that apppear based on how well / badly the player is doing in their goal / in their winrates
 * replay_folder - Path to the replay folder the player wants to be tracked, needs to have the double forward slash
 * today_goal - Goal for today in minutes
