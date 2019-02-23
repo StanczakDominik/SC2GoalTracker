@@ -2,7 +2,7 @@
 A light-weight, hands-free tool that gets data from SC2 replays.
 
 # How to use
-Customization can be adjusted in the settings.SC2GT for now which can be opened using notepad
+Customization can be adjusted in the settings.SC2GT for now which can be opened using notepad and is right next to the executable
 * main_race_only - [[True/False]] Only tracks replays of race specified in the "main_race" field
 * main_race - [[Protoss/Terran/Zerg]] - No support for random atm, only way is to turn "main_race_only" to False
 * player_id - ID of the player SC2 profile, which this program needs to work, see [How to get player_id](https://github.com/SC2GoalTracker/SC2GoalTracker/blob/master/README.md#How-to-get-player-id) below
@@ -21,6 +21,12 @@ There's a lot of bugs at the moment, and customization is a little limited for t
 
 ### Multiple monitor support?  
 Currently players will have to change the auto_anchor_left_right_offset /or auto_anchor_bottom_top_offset fields enough to make it place in another monitor
+
+### Why was minutes played chosen as the stat tracked?
+Minutes played was the stat that I wanted to track as I played. Games where a player gets cheesed/cheeses doesn't last as long as a macro game, so the time spent making proper decisions and accurate actions isn't as long.
+
+### Why a desktop app vs a web app?
+The decision to make a desktop app was made because having a persistent application which is visible at all times makes it harder to ignore. [Here's a link on how to do that for Windows 10](https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps)
 
 # How to get player id
 [optional]Go to rankedftw.com   
