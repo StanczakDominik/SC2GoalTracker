@@ -51,6 +51,6 @@ In the starcraft2.com URL for the profile you want to track, it will be the numb
 (e.g. https://starcraft2.com/en-gb/profile/3/1/##NUMBER_YOU_WANT###)
 
 # Acknowledgements
-**Watchdog** https://pythonhosted.org/watchdog/ - For new file creation detection
-**Kivy** https://kivy.org/#home - For creating the window/GUI
+**Watchdog** https://pythonhosted.org/watchdog/ - For new file creation detection  
+**Kivy** https://kivy.org/#home - For creating the window/GUI  
 **S2 Protocol** https://github.com/Blizzard/s2protocol - From Blizzard to get data from replays  
