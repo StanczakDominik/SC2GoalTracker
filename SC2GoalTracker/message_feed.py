@@ -74,5 +74,5 @@ def get_message_list(played_percentage,matchup_winrate,twitch_messages_on):
     #no message (no games played / no twich messages)
     if (not message_list):
         message_list += ["NO","GAMES","PLAYED"]
-        
+    message_list += ["SYSTEM: Created by SwordSCII"]
     return message_list

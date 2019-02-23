@@ -1,5 +1,7 @@
-from kivy.app import App
+import os
+os.environ["KIVY_NO_CONSOLELOG"] = "1"
 
+from kivy.app import App
 from kivy.uix.label import Label
 from kivy.clock import Clock,mainthread
 from kivy.uix.floatlayout import FloatLayout
@@ -18,6 +20,7 @@ import message_feed
 
 class TestApp(App):
     def build(self):
+        self.title = "Goal Tracker"
         self.load_settings()
         self.replay_analyze = replay_analyzer(self.replay_folder,self.player_id)
         self.message_feed_label = Label(text="",pos = (650,50),font_size='20sp',color=[1,1,1],outline_color=[0,0,0],outline_width=5,markup=True)
@@ -29,7 +32,6 @@ class TestApp(App):
         self.percent_played_label = Label(text="[b][i]" + ("%.1f" % (self.percent_played*100)) + "%[/i][/b]",size=(50,50),pos_hint={"x": .34, 'top':.95},font_size='90sp',color=[1,0,0],outline_color=[0,0,0],outline_width=5,markup=True)
         self.message_feed_label = Label(text="",pos = (650,45),font_size='20sp',color=[1,1,1],outline_color=[0,0,0],outline_width=5,markup=True)
         self.new_percent_played = self.replay_stats.percentage_minute_played()
-        self.replay_stats.replay_stats_dict["games"]["tvt"] = 5
         self.message_list = message_feed.get_message_list(self.replay_stats.percentage_minute_played(),self.replay_stats.win_rate_dict(),self.twitch_messages_on)
         self.message_feed_label.bind(size=self.message_feed_label.setter('text_size'))
         self.message_feed_animate()
@@ -53,13 +55,15 @@ class TestApp(App):
         self.f.add_widget(self.minutes_today_label)
         self.f.add_widget(self.minutes_week_label)
         self.f.add_widget(self.message_feed_label)
+        #put down here cause kivy and multiprocessing seems like it doesnt play together well
+        from kivy.core.window import Window
         Window.add_widget(self.f)
         Window.size = (700,200)
         if (self.auto_anchor):
             Window.left = GetSystemMetrics(0) - Window.width + self.auto_anchor_left_right_offset  if self.auto_anchor_corner.split(" ")[1] == "right" else 0 + self.auto_anchor_left_right_offset
             Window.top = (GetSystemMetrics(1) - Window.height - 40 + self.auto_anchor_bottom_top_offset) if self.auto_anchor_corner.split(" ")[0] == "bottom" else 0 + self.auto_anchor_bottom_top_offset
         observer = Observer()
-        observer.schedule(file_observer(self.update), self.replay_folder, recursive=True)
+        observer.schedule(file_observer(self.update), self.replay_folder, recursive=False)
         observer.start()
         Clock.schedule_once(self.increase_percent, 0.01)
     
@@ -158,8 +162,6 @@ if __name__ == '__main__':
         contents[1] = contents[1].replace("\n","")
         if (contents[0] == "[auto_anchor]" and validate_bool(contents[1])):
             Config.set('graphics', 'fullscreen', 'fake')
+    settings_file.close()
             
-    test = TestApp();
-    #put down here cause kivy and multiprocessing seems like it doesnt play together well
-    from kivy.core.window import Window
-    test.run()
+    test = TestApp().run()

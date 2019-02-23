@@ -1,8 +1,8 @@
 [main_race_only]=True
 [main_race]=Terran
-[player_id]=4134394
+[player_id]=[EXAMPLE_MUST_BE_CHANGED  4134394]
 [twitch_messages_on]=True
-[replay_folder]=C:\\Users\\{USERNAMEHERE}\\Documents\\StarCraft II\\Accounts\\{CONTINUE_REPLAY_FOLDER_PATH_HERE}
+[replay_folder]=[EXAMPLE_MUST_BE_CHANGED   C:\Users\{USERNAMEHERE}\Documents\StarCraft II\Accounts\{CONTINUE_REPLAY_FOLDER_PATH_HERE}]
 [today_goal]=120
 [week_goal]=500
 [auto_anchor]=True
