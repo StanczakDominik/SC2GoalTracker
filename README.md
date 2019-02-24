@@ -1,5 +1,5 @@
 # SC2GoalTracker
-A light-weight, hands-free tool that gets data from SC2 replays.
+A light-weight, hands-free tool that gets data from SC2 replays to show how many minutes you've played, and your winrates of the week.
 
 # How to install and use
 1) Download and install [Python 2.7](https://www.python.org/downloads/release/python-2715/)
@@ -35,11 +35,14 @@ Customization can be adjusted in the settings.SC2GT for now which can be opened 
 ### This program's buggy as heck / I want to do X  
 There's a lot of bugs at the moment, and customization is a little limited for the time being. Please check the [Issues tab](https://github.com/SC2GoalTracker/SC2GoalTracker/issues) to see what I'm aware of and what I would like to work on. Please add anything that I'm missing!  
 
+### Why do I have to install so much before using this?   
+Unfortunately I ran into many problems using these libraries to create this tool [see more info here](https://github.com/SC2GoalTracker/SC2GoalTracker/issues/13).
+
 ### Multiple monitor support?  
-Currently players will have to change the auto_anchor_left_right_offset /or auto_anchor_bottom_top_offset fields enough to make it place in another monitor
+Currently players will have to change the auto_anchor_left_right_offset /or auto_anchor_bottom_top_offset fields enough to make it place in another monitor.
 
 ### Why was minutes played chosen as the stat tracked?
-Minutes played was the stat that I wanted to track as I played. Games where a player gets cheesed/cheeses doesn't last as long as a macro game, so the time spent making proper decisions and accurate actions isn't as long.
+Minutes played was the stat that I wanted to track as I played. Games where a player gets cheesed/cheeses doesn't last as long as a macro game, so the number of games a player can play in a day heavily fluxuates where the number of minutes played is pretty consistent.
 
 ### Why a desktop app vs a web app?
 The decision to make a desktop app was made because having a persistent application which is visible at all times makes it harder to ignore. If you create a shortcut to the file you can also make it run on startup which is what I do. [Here's a link on how to do that for Windows 10](https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps)
