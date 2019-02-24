@@ -113,7 +113,7 @@ class replay_analyzer:
         processes = []
         for files in listdir(self.replay_folder):
             if (path.splitext(files)[1] == '.SC2Replay'):
-                archive = mpyq.MPQArchive(self.replay_folder +'\\'+ files)
+                archive = mpyq.MPQArchive(path.join(self.replay_folder, files))
                 contents = str(archive.header['user_data_header']['content'])
             
                 #figure out build version of replay
@@ -127,10 +127,10 @@ class replay_analyzer:
                 datetime_of_replay = datetime.utcfromtimestamp(((details['m_timeUTC']) / (10000000) - 11644473600 + ((details['m_timeLocalOffset']) / 10000000)))
                 p1 = Process()
                 if (datetime_of_replay.date() == datetime.today().date()):
-                    p1 = Process(target=self.minutes_in_replay, args=((self.replay_folder +'\\'+ files),rs.replay_stats_dict,True))
+                    p1 = Process(target=self.minutes_in_replay, args=((self.replay_folder, files),rs.replay_stats_dict,True))
                 #start of week credit https://stackoverflow.com/questions/39441639/getting-the-date-of-the-first-day-of-the-week?rq=1
                 elif(datetime_of_replay.date() >= (datetime.today() - timedelta(days=datetime.today().isoweekday() % 7)).date()):
-                    p1 = Process(target=self.minutes_in_replay, args=((self.replay_folder +'\\'+ files),rs.replay_stats_dict))
+                    p1 = Process(target=self.minutes_in_replay, args=(path.join(self.replay_folder, files),rs.replay_stats_dict))
                 
                 processes.append(p1)
                 p1.start()
