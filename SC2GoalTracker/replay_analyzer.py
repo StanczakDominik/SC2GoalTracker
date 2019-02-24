@@ -104,7 +104,7 @@ class replay_analyzer:
                         copy_wins["PvP"] +=1
             rs["wins"] = copy_wins
             rs["games"] = copy_games       
-            return rs
+        return rs
         
     
     def get_already_played(self):    
