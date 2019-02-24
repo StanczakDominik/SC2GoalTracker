@@ -114,7 +114,7 @@ class replay_analyzer:
         for files in listdir(self.replay_folder):
             if (path.splitext(files)[1] == '.SC2Replay'):
                 archive = mpyq.MPQArchive(path.join(self.replay_folder, files))
-                contents = str(archive.header['user_data_header']['content'])
+                contents = archive.header['user_data_header']['content']
             
                 #figure out build version of replay
                 header = versions.latest().decode_replay_header(contents)
