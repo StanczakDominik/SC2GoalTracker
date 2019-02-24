@@ -14,9 +14,12 @@ from watchdog.observers import Observer
 from replay_analyzer import replay_analyzer
 from replay_stats import replay_stats
 from file_observer import file_observer
-from win32api import GetSystemMetrics
 import message_feed
 
+from screeninfo import get_monitors
+m = get_monitors()[0]
+SCREEN_WIDTH = m.width
+SCREEN_HEIGHT = m.height
 
 class TestApp(App):
     def build(self):
@@ -60,8 +63,8 @@ class TestApp(App):
         Window.add_widget(self.f)
         Window.size = (700,200)
         if (self.auto_anchor):
-            Window.left = GetSystemMetrics(0) - Window.width + self.auto_anchor_left_right_offset  if self.auto_anchor_corner.split(" ")[1] == "right" else 0 + self.auto_anchor_left_right_offset
-            Window.top = (GetSystemMetrics(1) - Window.height - 40 + self.auto_anchor_bottom_top_offset) if self.auto_anchor_corner.split(" ")[0] == "bottom" else 0 + self.auto_anchor_bottom_top_offset
+            Window.left = SCREEN_WIDTH - Window.width + self.auto_anchor_left_right_offset  if self.auto_anchor_corner.split(" ")[1] == "right" else 0 + self.auto_anchor_left_right_offset
+            Window.top = (SCREEN_HEIGHT - Window.height - 40 + self.auto_anchor_bottom_top_offset) if self.auto_anchor_corner.split(" ")[0] == "bottom" else 0 + self.auto_anchor_bottom_top_offset
         observer = Observer()
         observer.schedule(file_observer(self.update), self.replay_folder, recursive=False)
         observer.start()
@@ -161,7 +164,7 @@ if __name__ == '__main__':
         contents = line.split("=")
         contents[1] = contents[1].replace("\n","")
         if (contents[0] == "[auto_anchor]" and validate_bool(contents[1])):
-            Config.set('graphics', 'fullscreen', 'fake')
+            Config.set('graphics', 'borderless', '1')
     settings_file.close()
             
     test = TestApp().run()
