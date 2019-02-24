@@ -3,14 +3,15 @@ A light-weight, hands-free tool that gets data from SC2 replays.
 
 # How to install and use
 1) Download and install [Python 2.7](https://www.python.org/downloads/release/python-2715/)
-2) Open up command prompt and move into the scripts folder within the Python 2.7 installation folder (e.g. cd "C:\Python27\Scripts")
+2) Open up command prompt and move into the scripts folder within the Python 2.7 installation folder   
+(e.g. cd "C:\Python27\Scripts")  
 3) Install watchdog from the command prompt [pip install watchdog](https://pythonhosted.org/watchdog/)
 4) Install s2protocol from the command prompt [pip install s2protocol](https://github.com/Blizzard/s2protocol/blob/master/docs/tutorial.rst)
 5) Install kivy and it's dependencies from the command prompt 
-[pip install --upgrade pip wheel setuptools](https://kivy.org/doc/stable/installation/installation-windows.html)
-pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
-pip install kivy.deps.gstreamer
-pip install kivy
+[pip install --upgrade pip wheel setuptools](https://kivy.org/doc/stable/installation/installation-windows.html)  
+pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew  
+pip install kivy.deps.gstreamer  
+pip install kivy  
 6) Download this repository from the "Clone or Download" button
 7) Setup the settings.SC2GT file as you want [see here](https://github.com/SC2GoalTracker/SC2GoalTracker/blob/master/README.md#Setting-up-the-settings-file)
 [Highly recommended optional step] Move all your old replays into another folder that is not in the replay_folder specified in the settings file
